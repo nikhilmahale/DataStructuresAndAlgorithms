@@ -19,7 +19,7 @@ struct Node {
 };
 
 /************************* Global Variables *******************/
-/* Head of the singly linked list */
+/* Head and start of the singly linked list */
 struct Node* head = NULL;
 struct Node* start = NULL;
 
@@ -29,7 +29,7 @@ struct Node* start = NULL;
  * Description: This functions dynamically allots memory
  *              to a node and add its to the linked list
  *************************************************************/
-void InsertNode(int newValue)  {///
+void InsertNode(int newValue)  {
 
     struct Node* currentHead = head;
     /* First allocate memory for this node*/
@@ -158,12 +158,11 @@ int main() {
                     PrintList();
                     break;
             case 5: cout << "Menu Exited.." << NEWLINE;
-                    cout << "***************************" << NEWLINE;
                     exit(0);
                     break;
             default: cout << "Invalid choice exiting menu...";
-                     cout << "***************************" << NEWLINE;
         }
     }
+    cout << "***************************" << NEWLINE;
     return 0;
 }
