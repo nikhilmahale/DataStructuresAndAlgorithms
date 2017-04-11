@@ -4,7 +4,8 @@
 * singly liked list with following options:
 * 1. Add Node
 * 2. Delete Node
-* 3. Search Code
+* 3. Search Node
+* 4. Print all members of the linked list
  **********************************************************/
 #include <iostream>
 using namespace std;
@@ -77,7 +78,28 @@ void DeleteNode(int value)  {
  *              list. Function not optimized for time and space
  *              complexity.
  ***************************************************************/
-int SearchElement(int value)  {
+int SearchElement(int searchVal)  {
+    cout << "Searching value " << searchVal << " in the linked list..." << NEWLINE;
+    Node* currentNode = start;
+    int pos = 0;//position where value is found
+    int valueFound = 0;
+
+    /* Loop through every node from start and print their values */
+    do {
+       if(currentNode->value == searchVal) {
+           valueFound = 1;
+           break;
+       }
+       pos++;
+       currentNode= currentNode->next;
+    }while(currentNode != NULL);
+
+    if(valueFound == 1) {
+        cout << "Value found at position " << pos << NEWLINE;
+    }
+    else {
+        cout << "Value not found in the linked list" << NEWLINE;
+    }
     return 0;
 }
 
@@ -87,24 +109,18 @@ int SearchElement(int value)  {
  int*              list
  **************************************************************/
 void PrintList(void)  {
-    cout << "Printing Linked list" << NEWLINE;
+    cout << "Printing Singly Linked list values:" << NEWLINE;
+
     Node* currentNode = start;
-//    while(currentNode != NULL) {
-//        cout << currentNode->value;
-//        currentNode= currentNode->next;
-//    };
+
+    /* Loop through every node from start and print their values */
     do {
-       cout << currentNode->value << NEWLINE;
+       cout << " -> " << currentNode->value;
        currentNode= currentNode->next;
     }while(currentNode != NULL);
-    return;
 
-    cout << "Finished printing list";
-
-//    cout << "Start value is " << start->value;
-//    cout << "start next address is " << start->next;
-//    cout << "Head value is " << head->value;
-//    cout << "Head next address is " << head->next;
+    cout << NEWLINE;
+    cout << "Finished printing list" << NEWLINE;
 }
 
 /**************************************************************/
@@ -114,7 +130,7 @@ int main() {
         cout << "***************************" << NEWLINE;
         cout << "Menu Singly Linked List" << NEWLINE;
         cout << "Select an option:" << NEWLINE;
-        cout << "1. Add a Node at end" << NEWLINE;
+        cout << "1. Add a Node" << NEWLINE;
         cout << "2. Search an element" << NEWLINE;
         cout << "3. Delete a Node" << NEWLINE;
         cout << "4. Print the linked list" << NEWLINE;
