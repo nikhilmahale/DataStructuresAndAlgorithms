@@ -1,11 +1,13 @@
 /**********************************************************
  * Author: Nikhil Mahale
  * Description: This code presents a program menu for a
- * stack with following options:
- * 1. Push
- * 2. Pop
- * 3. Is Stack Empty?
- * 4. Value at Top of Stack(Doesnt remove the top value)
+ * stack with following options. Stack is created using a
+ * fixed dimension array :
+ * 1. Push (Adds value to top of stack)
+ * 2. Pop (Removes value from top of stack)
+ * 3. Is Stack Empty
+ * 4. Value at Top of Stack (Doesn't remove the top value)
+ * 5. Print Stack
  **********************************************************/
 #include <iostream>
 using namespace std;
@@ -14,7 +16,7 @@ using namespace std;
 #define NEWLINE "\n"
 #define TRUE 1
 #define FALSE 0
-#define STACK_ARRAY_SIZE 5
+#define STACK_ARRAY_SIZE 100
 
 int StackArray[STACK_ARRAY_SIZE];
 typedef int BOOLEAN;
@@ -28,6 +30,10 @@ int TopIndex = -1;
 int IsEmpty = TRUE;
 
 /********************* Function Prototypes *******************/
+BOOLEAN IsStackEmpty(void);
+int Push(int);
+int Pop(void);
+int PrintStack(void);
 
 /************************* Module functions ******************/
 /*****************************************************************
@@ -40,8 +46,9 @@ int Push(int value) {
         return -1;
     }
 
-    TopIndex++;
-    StackArray[TopIndex] =value;
+    TopIndex = TopIndex + 1;
+    StackArray[TopIndex] = value;
+    cout << "Top Index is" << TopIndex;
     return 0;
 }
 
@@ -52,7 +59,7 @@ int Push(int value) {
 int Pop() {
     int popValue;
     if(IsStackEmpty()) {
-        cout << "Stack is Empty. Nothing to pop.";
+        cout << "Stack is Empty. Nothing to pop." << NEWLINE;
         return -1;
     }
 
@@ -73,7 +80,7 @@ BOOLEAN IsStackEmpty() {
     else {
         IsEmpty = FALSE;
     }
-    return TRUE;
+    return IsEmpty;
 }
 
 /********************************************************************
@@ -97,19 +104,21 @@ int ValueAtTop() {
 int PrintStack() {
     int index;
     if(IsStackEmpty()) {
-        cout << "Stack is Empty. Nothing to print.";
+        cout << "Stack is Empty. Nothing to print." << NEWLINE;
         return -1;
     }
 
-    cout << NEWLINE;
-    for(index = 0; index<= TopIndex; index++) {
-        cout << StackArray[TopIndex] << NEWLINE;
+    cout << "***** Stack Top *****" << NEWLINE;
+    for(index = TopIndex; index >= 0; index--) {
+        cout << "***** " << StackArray[index] << " *****" << NEWLINE;
     }
+    cout << "***** Stack Bottom *****" << NEWLINE;
     return 0;
 }
+
 /**************************************************************/
 int main() {
-    int selection, newElement, option;
+    int selection, newElement, isEmpty;
     while(1) {
         cout << "***************************" << NEWLINE;
         cout << "Stack using Array Functions" << NEWLINE;
@@ -127,20 +136,22 @@ int main() {
 
         switch(selection) {
             case PUSH:
-                cout << "Adding a value of node: " << NEWLINE;
-                cout << "Enter value to be added " << NEWLINE;
+                cout << "Enter value to be pushed " << NEWLINE;
                 cin >> newElement;
-                InsertNode(newElement);
+                Push(newElement);
                 break;
             case POP:
-                cout << "Searching an element " << NEWLINE;
-                cout << "Enter value to be searched " << NEWLINE;
-                cin >> newElement;
-                SearchElement(newElement);
+                newElement = Pop();
+                cout << "Popped value is " << newElement << NEWLINE;
                 break;
             case IS_EMPTY:
-                cin >> option;
-                DeleteNode(option);
+                isEmpty = IsStackEmpty();
+                if(isEmpty == TRUE) {
+                    cout << "Stack is Empty" << NEWLINE;
+                }
+                else {
+                    cout << "Stack is Not Empty" << NEWLINE;
+                }
                 break;
             case TOP_VALUE:
                 cout << "Value at top is  " << ValueAtTop() << NEWLINE;
