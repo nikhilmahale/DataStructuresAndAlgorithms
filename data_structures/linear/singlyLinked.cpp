@@ -157,7 +157,7 @@ void PrintList(void) {
     }
 
     Node* currentNode = start;
-    /* Loop through every node from start and print their  values */
+    /* Loop through every node from start and print their   values */
     do {
         cout << " -> " << currentNode->value;
         currentNode= currentNode->next;
