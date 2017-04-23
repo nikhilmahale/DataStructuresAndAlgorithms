@@ -150,14 +150,14 @@ int SearchElement(int searchVal) {
 void PrintList(void) {
     cout << "Printing Singly Linked list values:" << NEWLINE;
 
-    /* Exit gracefully if list is empty and nothing to print */
+    /* Exit gracefully if list is empty and there is nothing to print */
     if(start == NULL) {
         cout << "List is empty. Nothing to print" << NEWLINE;
         exit(0);
     }
 
     Node* currentNode = start;
-    /* Loop through every node from start and print their values */
+    /* Loop through every node from start and print their  values */
     do {
         cout << " -> " << currentNode->value;
         currentNode= currentNode->next;
