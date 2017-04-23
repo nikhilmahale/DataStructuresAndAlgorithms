@@ -30,6 +30,7 @@ struct Node* start = NULL;
 /********************* Function Prototypes *******************/
 void DeleteNodeAtPosition(int);
 int SearchElement(int);
+
 /************************* Module functions ******************/
 /*************************************************************
  * Function Name: InsertNode
