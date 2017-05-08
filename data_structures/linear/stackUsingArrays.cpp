@@ -2,7 +2,7 @@
  * Author: Nikhil Mahale
  * Description: This code presents a program menu for a
  * stack with following options. Stack is created using a
- * fixed dimension array :
+ * fixed dimensional array :
  * 1. Push (Adds value to top of stack)
  * 2. Pop (Removes value from top of stack)
  * 3. Is Stack Empty
