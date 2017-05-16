@@ -3,8 +3,8 @@
  * Description: This code presents a program menu for a
  * singly liked list with following options:
  * 1. Add Node
- * 2. Delete Node
- * 3. Search Node
+ * 2. Search Node
+ * 3. Delete Node
  * 4. Print all members of the linked list
  **********************************************************/
 #include <iostream>
