@@ -108,7 +108,8 @@ int HeightOfBST() {
 int main() {
     int selection, newElement;
     while(1) {
-        cout << "***************************" << NEWLINE;
+        cout << NEWLINE << NEWLINE << NEWLINE;
+	cout << "***************************" << NEWLINE;
         cout << "BST using Linked List Functions" << NEWLINE;
         cout << "***************************" << NEWLINE;
         cout << "Select an option:" << NEWLINE;
@@ -133,7 +134,22 @@ int main() {
             case IS_EMPTY:
                 break;
             case PRINT_BST:
-                PrintBST(RootPtr);
+                cout << "In which order? Pre (1) , In (2),  Post(3)" << endl;
+		cin >> selection;
+		switch(selection) {
+			case PRE_ORDER:
+				PrintBstPreOrder(RootPtr);
+				break;
+			case IN_ORDER:
+				PrintBstInOrder(RootPtr);
+				break;
+			case POST_ORDER:
+				PrintBstPostOrder(RootPtr);
+				break;
+			default:
+				cout << "Invalid Selection!!!" << endl;
+		
+		}
                 break;
             case HEIGHT_BST:
                 cout << "Height is " << HeightOfBST();
@@ -144,8 +160,11 @@ int main() {
                 break;
             default:
                 cout << "Invalid choice exiting menu...";
+		exit (1);
+		break;
         }
-        cout << "***************************" << NEWLINE;
+        
+
     }
     return 0;
 }

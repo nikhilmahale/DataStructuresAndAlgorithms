@@ -1,3 +1,5 @@
 #include "treeCommon.h"
 
-void PrintBST(BSTNode* node);
+void PrintBstPreOrder(BSTNode* node);
+void PrintBstInOrder(BSTNode* node);
+void PrintBstPostOrder(BSTNode* node);
