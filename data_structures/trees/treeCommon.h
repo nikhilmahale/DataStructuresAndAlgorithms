@@ -15,7 +15,7 @@ struct BSTNode {
 typedef int BOOLEAN;
 
 /************************* Enumerations ***************************************/
-enum MAIN_MENU { ADD = 1, SEARCH, IS_EMPTY, PRINT_BST, HEIGHT_BST, EXIT_MAIN};
+enum MAIN_MENU { READYMADE = 0, ADD, SEARCH, IS_EMPTY, PRINT_BST, HEIGHT_BST, EXIT_MAIN};
 enum BST_PRINT { PRE_ORDER = 1, IN_ORDER, POST_ORDER };
 
 #endif

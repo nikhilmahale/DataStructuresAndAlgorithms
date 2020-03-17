@@ -37,7 +37,7 @@ int HeightOfBST(void);
 int AddNode(int newValue, BSTNode* node) {
     if(RootPtr == (BSTNode*)NULL) { //Adding first element to BST
         RootPtr = (BSTNode*)malloc(sizeof(BSTNode));
-        cout << "Adding root node to BST" << NEWLINE;
+        cout << "Adding root node to BST: " << newValue << NEWLINE;
         RootPtr->value = newValue;
         RootPtr->left = NULL;
         RootPtr->right = NULL;
@@ -46,7 +46,7 @@ int AddNode(int newValue, BSTNode* node) {
     } else {
         if(newValue < (node->value)) {
             LeftHeight++;
-            cout << newValue << " is smaller than " << node->value << " hence adding at left";
+            cout << newValue << " is smaller than " << node->value << " hence adding at left" << endl;
             /* Add smaller values to left */
             if(node->left == NULL) {
                 BSTNode* newNode = (BSTNode*)malloc(sizeof(BSTNode));
@@ -59,7 +59,7 @@ int AddNode(int newValue, BSTNode* node) {
             }
         } else {
             RightHeight++;
-            cout << newValue << " is greater than " << node->value << " hence adding at right";
+            cout << newValue << " is greater than " << node->value << " hence adding at right" << endl;
             /* Add bigger values to right */
             if(node->right == NULL) {
                 BSTNode* newNode = (BSTNode*)malloc(sizeof(BSTNode));
@@ -113,6 +113,7 @@ int main() {
         cout << "BST using Linked List Functions" << NEWLINE;
         cout << "***************************" << NEWLINE;
         cout << "Select an option:" << NEWLINE;
+        cout << "0. Use Readymade BST" << NEWLINE;
         cout << "1. Add Node to BST" << NEWLINE;
         cout << "2. Search a value in BST" << NEWLINE;
         cout << "3. Is BST Empty" << NEWLINE;
@@ -124,7 +125,16 @@ int main() {
         cin >> selection;
 
         switch(selection) {
-            case ADD:
+	    case READYMADE:
+                AddNode(56, RootPtr);
+                AddNode(68, RootPtr);
+                AddNode(75, RootPtr);
+                AddNode(99, RootPtr);
+                AddNode(23, RootPtr);
+                AddNode(60, RootPtr);
+                AddNode(70, RootPtr);
+		break;
+	    case ADD:
                 cout << "Enter value to be added to BST " << NEWLINE;
                 cin >> newElement;
                 AddNode(newElement, RootPtr);
@@ -138,12 +148,15 @@ int main() {
 		cin >> selection;
 		switch(selection) {
 			case PRE_ORDER:
+                		cout << "Printing BST in Pre-Order" << endl;
 				PrintBstPreOrder(RootPtr);
 				break;
 			case IN_ORDER:
+                		cout << "Printing BST in In-Order" << endl;
 				PrintBstInOrder(RootPtr);
 				break;
 			case POST_ORDER:
+                		cout << "Printing BST in Post-Order" << endl;
 				PrintBstPostOrder(RootPtr);
 				break;
 			default:
@@ -155,7 +168,7 @@ int main() {
                 cout << "Height is " << HeightOfBST();
                 break;
             case EXIT_MAIN:
-                cout << "Binary Search Tree using linked list Menu Exiting.." << NEWLINE;
+                cout << "Menu Exiting.." << NEWLINE;
                 exit(0);
                 break;
             default:
