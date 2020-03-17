@@ -11,23 +11,12 @@
  * 5. Height of BST
  **********************************************************/
 #include <iostream>
+
+#include "treeTraversal.h"
+#include "treeCommon.h"
+
 using namespace std;
-
-/********************* Data structures and macros ************/
-#define NEWLINE "\n"
-#define TRUE 1
-#define FALSE 0
-
-/* A node in a BST */
-struct BSTNode {
-    int value;
-    BSTNode* left;
-    BSTNode* right;
-};
-typedef int BOOLEAN;
 int RightHeight = -1, LeftHeight = -1;
-/************************* Enumerations ***************************************/
-enum MAIN_MENU { ADD = 1, SEARCH, IS_EMPTY, PRINT_BST, HEIGHT_BST, EXIT_MAIN};
 
 /************************* Global Variables ***********************************/
 /* root of binary search tree */
@@ -38,7 +27,6 @@ int IsEmpty = TRUE;
 int AddNode(int, BSTNode*);
 BOOLEAN SearchNode(int);
 BOOLEAN IsBSTEmpty(int);
-void PrintBST(BSTNode*);
 int HeightOfBST(void);
 
 /************************* Module functions ******************/
@@ -113,37 +101,6 @@ int HeightOfBST() {
     }
     else {
         return 0;
-    }
-}
-
-/*****************************************************************
- * Function Name: PrintBST
- * Description: Prints BST in Pre-Order Traversal
- *****************************************************************/
-void PrintBST(BSTNode* node) {
-    static int level = -1;
-    level++; //we go deeper at each call
-    if(RootPtr == (BSTNode*)NULL) { //Adding first element to BST
-        cout << "BST is empty. Nothing to print" << NEWLINE;
-    } else {
-        cout << NEWLINE;
-        //cout << "Values at level " << level << "are ";
-        if((node->left == NULL) && (node->right == NULL)) {
-            cout << node->value << " " << NEWLINE;
-        }
-        else if((node->left == NULL) && (node->right != NULL)) {
-            cout << node->value << " " << NEWLINE;
-            PrintBST(node->right);
-        }
-        else if((node->right == NULL) && (node->left != NULL)) {
-            cout << node->value << " " << NEWLINE;
-            PrintBST(node->right);
-        }
-        else {
-            cout << node->value << " " << NEWLINE;
-            PrintBST(node->left);
-            PrintBST(node->right);
-        }
     }
 }
 
