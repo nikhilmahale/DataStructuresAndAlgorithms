@@ -1,2 +1,31 @@
-# Algorithms And Data Structures
-This repository contains source code for all various algorithms and data structures. More information will be added about the analysis and real-life usage of this algorithms.
+## Algorithms And Data Structures
+
+### Topics to Study (Time and Space Complexity for all algorithms and DS should be by-heart)
+
+1.	Linear Data Structures
+    - Array
+    - Linked List
+    - Stack
+    - Queue
+2.	Non-Linear Data Structures
+    - Hash Table
+    - Heaps
+    - Trees
+        - BST
+        - AVL
+    - Map (Hash vs Tree)
+    - Set
+    - Trie
+    - Graphs
+        - BFS
+        - DFS
+        - Djikstra’s
+3.	Searching
+    - Linear
+    - Binary
+4.	Sorting
+    - Merge Sort
+    - Quick Sort
+    - Heap Sort
+5. Dynamic Programming
+
