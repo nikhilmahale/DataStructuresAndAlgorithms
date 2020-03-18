@@ -2,12 +2,13 @@
 
 ### Topics to Study (Time and Space Complexity for all algorithms and DS should be by-heart)
 
-1.	Linear Data Structures
+### Linear Data Structures
+
     - Array
     - Linked List
     - Stack
     - Queue
-2.	Non-Linear Data Structures
+### Non-Linear Data Structures
     - Hash Table
     - Heaps
     - Trees
@@ -20,12 +21,12 @@
         - BFS
         - DFS
         - Djikstra’s
-3.	Searching
+### Searching
     - Linear
     - Binary
-4.	Sorting
+### Sorting
     - Merge Sort
     - Quick Sort
     - Heap Sort
-5. Dynamic Programming
+### Dynamic Programming
 
