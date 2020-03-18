@@ -1,32 +1,33 @@
 ## Algorithms And Data Structures
 
-### Topics to Study (Time and Space Complexity for all algorithms and DS should be by-heart)
-
 ### Linear Data Structures
 
-    - Array
-    - Linked List
-    - Stack
-    - Queue
+#### Array
+    Some text here
+#### Linked List
+    Some here
+#### Stack
+#### Queue
+
 ### Non-Linear Data Structures
-    - Hash Table
-    - Heaps
-    - Trees
+#### Hash Table
+#### Heaps
+#### Trees
         - BST
         - AVL
-    - Map (Hash vs Tree)
-    - Set
-    - Trie
-    - Graphs
+        - Trie
+#### Map (Hash vs Tree)
+#### Set
+#### Graphs
         - BFS
         - DFS
         - Djikstra’s
 ### Searching
-    - Linear
-    - Binary
+#### Linear
+#### Binary
 ### Sorting
-    - Merge Sort
-    - Quick Sort
-    - Heap Sort
+#### Merge Sort
+#### Quick Sort
+#### Heap Sort
 ### Dynamic Programming
 
